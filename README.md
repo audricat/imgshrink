@@ -1,4 +1,9 @@
 # imgshrink
 ## Setup
 terminal:
-`npm i -D electron`
+
+```
+npm install
+npm i -D electron
+
+```
