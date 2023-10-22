@@ -1,10 +1,13 @@
 {
-  "name": "codespaces-blank",
+  "name": "Image-Shrinker",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "description": "simple electron project image shrinker",
+  "main": "app/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "nodemon electron . --exec",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,30 @@
   "bugs": {
     "url": "https://github.com/shanenprz/imgshrink/issues"
   },
-  "homepage": "https://github.com/shanenprz/imgshrink#readme"
+  "homepage": "https://github.com/shanenprz/imgshrink#readme",
+  "devDependencies": {
+    "@electron-forge/publisher-github": "^6.4.2",
+    "electron": "^27.0.2",
+    "electron-prebuilt-compile": "8.2.0",
+    "nodemon": "^3.0.1"
+  },
+
+  "config": {
+    "forge": {
+        "packagerConfig": {},
+        "makers": [
+            {
+                "name": "@electron-forge/maker-squirrel",
+                "config": {}
+            },
+            {
+                "name": "@electron-forge/maker-zip",
+                "platforms": [
+                    "win32"
+                ]
+            }
+        ]
+    }
+}
+
 }

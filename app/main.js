@@ -13,6 +13,7 @@ function createMainWindow() {
     mainWindow = new BrowserWindow({
         title: 'ImageShrink',
         icon: `${__dirname}/assets/icons/256icon.png`,
+        width: 500,
         width: 500, 
         height: 600,
         resizable: isDev,
@@ -99,4 +100,5 @@ app.on('window-all-closed', () => {
   }
 })
 
+app.on('ready', createMainWindow);
 app.allowRendererProcessReuse = true;
